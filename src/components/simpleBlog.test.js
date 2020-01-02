@@ -74,19 +74,3 @@ describe('testing my blog component', () => {
         expect(div).toHaveStyle('display: ')
     })
 })
-
-
-    /*test('clicking like button twice calls event handler twice', () => {
-        const mockHandler = jest.fn()
-        
-        /*const button = component.getByText('like')
-        fireEvent.click(button)
-        expect(mockHandler.mock.calls.length).toBe(1)
-        //component.debug()
-
-        const {getByText} = component,
-                button = getByText('like')
-
-        fireEvent.click(button)
-        expect(mockHandler).toHaveBeenCalled()
-    })*/
