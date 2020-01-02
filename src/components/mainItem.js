@@ -1,5 +1,5 @@
 import React from 'react'
 
-const MainItem = (props) => <span>{props.title} {props.author} </span>
+const MainItem = (props) => <span className={'main'}>{props.title} {props.author} </span>
 
 export default MainItem
