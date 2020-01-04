@@ -74,6 +74,25 @@ function App() {
     if (toggler.current.visible) toggler.current.toggleVisibility()
     setUser(null)
   }
+  const onClickLikes = async (props) => {
+    try{
+      const body = {
+        likes: props.likes + 1
+        }
+      await services.updateLike(props.id, body)
+      let modItem = initialBlogs.map(function(each){
+            if(props.id !== each.id) {return each}
+            else {
+              return {...each, likes: each.likes+1}
+            }
+          })
+      setInitialBlogs(modItem)
+    }
+    catch(e){
+      setError('Oops!Something went wrong.')
+      setTimeout(()=> setError(''), 3000)
+    }
+  }
 
   const showBlogList = (initialBlogs) => {
     const style = {
@@ -98,8 +117,8 @@ function App() {
           <div style={style}>
               <Toggo2>
                   <MainItem title={item.title} author={item.author} />
-                  <ShowBlogLists2 url={item.url} likes={item.likes} listedUser={item.user}
-                                 loggedUser={user} id={item.id} title={item.title} onClickDelete={onClickDelete}></ShowBlogLists2>
+                  <ShowBlogLists2 url={item.url} likes={item.likes} listedUser={item.user} onClickLikes={()=>onClickLikes(item)} 
+                  blogs={initialBlogs} loggedUser={user} id={item.id} title={item.title} onClickDelete={onClickDelete}></ShowBlogLists2>
               </Toggo2>
           </div>
         </li>
