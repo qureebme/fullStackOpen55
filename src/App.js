@@ -5,7 +5,7 @@ import services from './services/blogs'
 import Notif from './components/notifs'
 import Toggo from './components/togglable'
 import Butt from './components/newButton'
-import ShowBlogLists2 from './components/showBlogList2'
+import ShowBlogDetails from './components/showBlogDetails'
 import Toggo2 from './components/togglable2'
 import MainItem from './components/mainItem'
 
@@ -117,8 +117,8 @@ function App() {
           <div style={style}>
               <Toggo2>
                   <MainItem title={item.title} author={item.author} />
-                  <ShowBlogLists2 url={item.url} likes={item.likes} listedUser={item.user} onClickLikes={()=>onClickLikes(item)} 
-                  blogs={initialBlogs} loggedUser={user} id={item.id} title={item.title} onClickDelete={onClickDelete}></ShowBlogLists2>
+                  <ShowBlogDetails url={item.url} likes={item.likes} listedUser={item.user} onClickLikes={()=>onClickLikes(item)} 
+                  blogs={initialBlogs} loggedUser={user} id={item.id} title={item.title} onClickDelete={onClickDelete}></ShowBlogDetails>
               </Toggo2>
           </div>
         </li>
