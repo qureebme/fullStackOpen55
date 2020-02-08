@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './anyButton'
+import Button from './deleteButton'
 
 const ShowBlogDetails = (props) => {
 

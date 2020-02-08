@@ -156,7 +156,7 @@ function App() {
       setTitle('')
       setUrl('')
       const entry = await services.createBlogNote(newEntry)
-      console.log(entry)
+      //console.log(entry)
       setInitialBlogs(initialBlogs.concat(entry))
       setMssg(`new blog: ${newEntry.title} by ${newEntry.author} added!`)
       setTimeout(() => setMssg(''), 3000)

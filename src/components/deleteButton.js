@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AnyButton = (props) => {
+const DeleteButton = (props) => {
 
     if (props.loggedUser.username === props.listedUser.username)
         return (<button onClick={props.onClick} >{props.label}</button>)
@@ -8,4 +8,4 @@ const AnyButton = (props) => {
     }
     
 
-export default AnyButton;
+export default DeleteButton;
