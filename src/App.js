@@ -6,8 +6,7 @@ import Notif from './components/notifs'
 import Toggo from './components/togglable'
 import Butt from './components/newButton'
 import ShowBlogDetails from './components/showBlogDetails'
-import Toggo2 from './components/togglable2'
-import MainItem from './components/mainItem'
+import Blog from './components/Blog'
 
 function App() {
   const [name, setName] = useState('')
@@ -115,11 +114,11 @@ function App() {
     return initialBlogs.map(item => (
         <li key={item.id}>
           <div style={style}>
-              <Toggo2>
-                  <MainItem title={item.title} author={item.author} />
+              <Blog title={item.title} author={item.author}>
+                  {/*<MainItem title={item.title} author={item.author} />*/}
                   <ShowBlogDetails url={item.url} likes={item.likes} listedUser={item.user} onClickLikes={()=>onClickLikes(item)} 
                   blogs={initialBlogs} loggedUser={user} id={item.id} title={item.title} onClickDelete={onClickDelete}></ShowBlogDetails>
-              </Toggo2>
+              </Blog>
           </div>
         </li>
     ))
